@@ -10,4 +10,6 @@ public interface URLRepo extends CrudRepository<Url,Long> {
     Url findByShortUrl (String shortUrl);
 
     Url findByLongUrl(String longUrl);
+
+    Object findByShortUrlLike(String shortUrl);
 }

@@ -35,22 +35,20 @@ public class UrlController {
     @PostMapping("/add")
     public ModelAndView addUrl(@RequestParam("longUrl") String longUrl) throws MalformedURLException {
         String randomChar = urlService.getRandomChars();
-            ModelAndView modelAndView = new ModelAndView();
+        ModelAndView modelAndView = new ModelAndView();
         Iterable<Url> urls ;
         if (longUrl != null){
-            if (urlRepo.findByLongUrl(longUrl) == null) {
-                urlService.setShortUrl(randomChar, longUrl);
-            }
+            urlService.checkOnDatabase(longUrl, randomChar);
             modelAndView.addObject("urls", urlRepo.findByLongUrl(longUrl));
         }
         modelAndView.setViewName("mainPage");
         return modelAndView;
     }
-
+//контроллер перенаправления с генерируемой ссылки на длинную
     @RequestMapping(value="/s/{randomstring}", method=RequestMethod.GET)
     public void getLongUrl(HttpServletResponse response, @PathVariable("randomstring") String shortUrl) throws IOException {
         shortUrl = ("http://localhost:8081/s/"+shortUrl);
-        urlService.getLongUrl(response,shortUrl);
+        urlService.redirect(response,shortUrl);
     }
 
 }
