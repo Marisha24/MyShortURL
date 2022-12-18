@@ -1,7 +1,7 @@
 package com.example.myshoturl.contrroller;
 
 import com.example.myshoturl.Repository.URLRepo;
-import com.example.myshoturl.Url;
+import com.example.myshoturl.entity.Url;
 
 import com.example.myshoturl.service.UrlService;
 import jakarta.servlet.http.HttpServletResponse;

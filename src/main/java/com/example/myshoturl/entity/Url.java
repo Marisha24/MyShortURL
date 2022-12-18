@@ -1,4 +1,4 @@
-package com.example.myshoturl;
+package com.example.myshoturl.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

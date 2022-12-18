@@ -1,10 +1,9 @@
     package com.example.myshoturl.service;
     import com.example.myshoturl.Repository.URLRepo;
-    import com.example.myshoturl.Url;
+    import com.example.myshoturl.entity.Url;
     import jakarta.servlet.http.HttpServletResponse;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Service;
-    import org.springframework.web.bind.annotation.PathVariable;
 
     import java.io.IOException;
     import java.net.MalformedURLException;
