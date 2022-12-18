@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="UTF-8">
+<body>
+<div>
+
+</div>
+<div>
+<form  method="post" action="/add">
+      <input type="text" name="longUrl" placeholder="Put link" />
+      <button type="submit">Filter</button>
+ </form></div>
+<div>List link</div>
+{{#urls}}
+<div>
+
+  <b>{{shortUrl}}</b>
+
+</div>
+{{/urls}}
+</body>
+
+</html>
